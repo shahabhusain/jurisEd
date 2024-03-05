@@ -11,7 +11,7 @@ const FaqItem = ({ title, answer }) => {
             onClick={() => setOpen(!open)}
             className="flex justify-between w-full cursor-pointer"
           >
-            <span className=" text-[#D1D1D1] text-[22px] font-[500]">
+            <span className=" text-[#D1D1D1] md:text-[22px] [16px] font-[500]">
               {title}
             </span>
             {open ? (
@@ -30,7 +30,7 @@ const FaqItem = ({ title, answer }) => {
             open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
           }`}
         >
-          <div className="overflow-hidden text-[#D1D1D1] text-[14px] font-normal">
+          <div className="overflow-hidden text-[#D1D1D1] md:text-[14px] text-[11px] font-normal">
             {open && answer}
           </div>
         </div>
