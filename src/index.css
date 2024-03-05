@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background: linear-gradient(288deg, #161C27 4.79%, #323842 100.34%);
+  font-family: "poppins", sans-serif;
+}
+
+button{
+  border-radius: 16px;
+background: linear-gradient(91deg, #8C5300 0.44%, #EDB96E 171.64%, #B7700A 264.1%);
+}
+
+.txt{
+  background: var(--Mvuala-Gradient, linear-gradient(180deg, #A38353 0%, #F0D69D 48.96%, #C6A67E 100%));
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+input{
+  border-radius: 8px;
+  color: white;
+  background: var(--BackGround, #0C0F16);
+}
+
+textarea{
+  border-radius: 8px;
+  color: white;
+  background: var(--BackGround, #0C0F16);
+}
+
+
+.btn{
+  position: relative;
+}
+
+.btn::after{
+  content: '';
+  position: absolute;
+  background: var(--Mvuala-Gradient, linear-gradient(180deg, #A38353 0%, #F0D69D 48.96%, #C6A67E 100%));
+  width: 0;
+  height: 3px;
+  top: 25px;
+  left: 0;
+  right: 0;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.btn:hover::after{
+  width: 100%;
+}
