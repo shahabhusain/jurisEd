@@ -2,7 +2,7 @@ import React from 'react'
 import about from '../assets/about.png'
 const About = () => {
   return (
-    <div className=' bg-[#0C0F16] w-full py-12 mt-24' id='about'>
+    <div className=' bg-[#0C0F16] w-full py-12 mt-44' id='about'>
       <div className=' md:mx-24 mx-4 flex flex-col-reverse md:flex-row items-center justify-between'>
       <img className=' md:w-[35%] md:mt-0 mt-12 ' src={about} alt="" />
       <div className=' md:w-[50%] flex flex-col md:gap-5 gap-3'>

@@ -34,7 +34,7 @@ const Header = () => {
             : ""
         }`}
       >
-        <div className="md:flex hidden items-center justify-between mx-24 my-4">
+        <div className="md:flex hidden items-center justify-between mx-44 my-4">
           <img className="w-[100px]" src={logo} alt="" />
           <div>
             <ul

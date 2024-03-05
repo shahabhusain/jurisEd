@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className=" flex flex-col md:flex-row items-center justify-between md:mx-24 mx-4 md:mt-24 mt-12"
+      className=" flex flex-col md:flex-row items-center justify-between md:mx-44 mx-4 md:mt-24 mt-12"
     >
       <div className=" flex flex-col gap-4 md:w-[50%]">
         <img
