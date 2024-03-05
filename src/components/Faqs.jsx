@@ -5,7 +5,7 @@ const FaqItem = ({ title, answer }) => {
 
   return (
     <div className=" " id="faqs">
-      <div className="bg-[#161C27] p-6 rounded-lg md:mx-24 mx-4">
+      <div className="bg-[#161C27] p-6 rounded-lg md:mx-56 mx-4">
         <div className="py-2">
           <div
             onClick={() => setOpen(!open)}
