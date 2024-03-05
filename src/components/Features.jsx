@@ -17,7 +17,7 @@ const Features = () => {
             <span className=" txt">Search</span> and{" "}
             <span className=" txt">Pronunciation.</span>
           </h1>
-          <p className=" text-[16px] font-normal text-[#ddd]">
+          <p className=" text-[16px] font-normal text-[#ddd] md:mr-0 mr-3">
             With our innovative search functionality, lawyers can effortlessly
             explore our extensive database of legal terms, concepts, and case
             law. Whether you're researching a specific topic or seeking

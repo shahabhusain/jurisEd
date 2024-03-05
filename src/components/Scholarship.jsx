@@ -10,7 +10,7 @@ const Scholarship = () => {
              <span className=" txt">Opportunities <span className="">for</span></span> {" "}
             <span className=" txt">Students</span>
           </h1>
-          <p className=" text-[16px] font-normal text-[#ddd]">
+          <p className=" text-[16px] font-normal text-[#ddd] md:mr-0 mr-3">
           At Juris Ad, we believe in empowering the next generation of legal professionals, which is why we are pleased to offer scholarship opportunities for aspiring law students. Our scholarships are designed to recognize academic excellence, leadership potential, and a commitment to making a positive impact in the field of law.
           </p>
         </div>

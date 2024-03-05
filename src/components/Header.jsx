@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.svg";
 import { IoMdMenu } from "react-icons/io";
+import { FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -80,31 +82,34 @@ const Header = () => {
               >
                 FAQs
               </Link>
-             <button   className="py-3 px-6">
-             <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-              >
-                Contact
-              </Link>
-             </button>
+              <button className="py-3 px-6">
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Contact
+                </Link>
+              </button>
             </ul>
           </div>
         </div>
       </div>
 
-      <div className="md:hidden block mx-4 my-4">
-        <div className="flex items-center justify-between">
+      <div className={`md:hidden block  my-4 sticky top-0 z-50 ${isActive ? "bg-white py-3 transition-all duration-300 ease-in-out" : ""}`}>
+        <div className="flex items-center justify-between mx-4">
           <img className="w-[100px]" src={logo} alt="" />
-          <span className="text-white text-[22px]" onClick={toggleMenu}>
-            <IoMdMenu />
+          <span
+            onClick={() => setIsOpen(!isOpen)}
+            className={` text-[22px] ${isActive ? "" : "text-white"}`}
+          >
+            {isOpen ? <FaTimes /> : <IoMdMenu />}
           </span>
         </div>
-        <div className="hidden">
-          <ul className="text-white bg-yellow-600 py-3 rounded-md mt-7 flex flex-col items-center justify-center gap-5">
+        <div className={`${isOpen ? "" : "hidden"}`}>
+          <ul className="text-white bg-yellow-600 absolute  w-[100%] py-3  rounded-md mt-7 flex flex-col items-center justify-center gap-5">
             <li className="cursor-pointer">Home</li>
             <li className="cursor-pointer">About Us</li>
             <li className="cursor-pointer">Features</li>
