@@ -16,7 +16,7 @@ function Coursera() {
   };
 
   return (
-    <div className=" mx-2">
+    <div className=" mx-2 my-12">
       <div className=" relative">
         <img className=" w-[100%]" src={Image} alt="" />
         <div className=" absolute flex justify-center items-center flex-col  inset-0 ">

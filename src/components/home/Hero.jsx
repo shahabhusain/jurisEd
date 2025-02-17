@@ -8,11 +8,7 @@ const Hero = () => {
     <div className="">
       <div id="hero" className=" flex flex-col md:flex-row gap-12 items-center justify-between md:mx-20 mx-4 md:mt-20 mt-16 " >
       <div className=" flex flex-col gap-4 md:w-[50%] md:ml-6">
-        <img
-          className=" md:w-[255px] sm:w-[200px] w-[180px]"
-          src={logo}
-          alt=""
-        />
+        <h1 className=" text-[65px] text-white font-bold">JurisEd</h1>
         <h1 className=" md:text-[40px] sm:text-[30px] text-[25px] text-white font-bold">
           Mobile App
         </h1>

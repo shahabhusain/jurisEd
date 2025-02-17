@@ -6,7 +6,7 @@ import logo from '../assets/logo.svg'
 import { Link } from 'react-scroll';
 const Footer = () => {
   return (
- <div className=' bg-[#0C0F16] py-12 mt-20'>
+ <div className=' bg-[#0C0F16] py-12 pt-20'>
        <div className=' flex flex-col md:flex-row items-center justify-between mx-32'>
         <img className=' w-[100px]' src={logo} alt="" />
         <ul className=' flex flex-col md:flex-row md:mt-0 mt-14 items-center gap-4 text-white'>

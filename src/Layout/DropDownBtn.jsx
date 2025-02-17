@@ -5,15 +5,15 @@ const DropDownBtn = ({ isActive }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { title: "Coursera", path: "/course" },
+    { title: "Coursera Financial Aid", path: "/course" },
     { title: "How to create successful CVs", path: "/cv" },
-    { title: "Latest Judgements Analysis", path: "/latest-judgements" },
-    { title: "Path to Practice", path: "/path-to-practice" },
+    { title: "Latest Judgements Analysis", path: "/latest" },
+    { title: "Path to Practice", path: "/path" },
     { title: "ADR", path: "/adr" },
-    { title: "Judiciary", path: "/judiciary" },
-    { title: "Understanding Legal Concepts", path: "/legal-concepts" },
-    { title: "Drafting & Advocacy", path: "/drafting-advocacy" },
-    { title: "Jobs, Fellowships & Internships", path: "/jobs-internships" },
+    { title: "Judiciary", path: "/judi" },
+    { title: "Understanding Legal Concepts", path: "/legal" },
+    { title: "Drafting & Advocacy", path: "/drafting" },
+    { title: "Jobs, Fellowships & Internships", path: "/jobs" },
   ];
 
   return (

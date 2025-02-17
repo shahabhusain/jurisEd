@@ -23,7 +23,6 @@ const Header = () => {
   }, []);
 
   const toggleMenu = () => {
-    // Toggle the menu state
     setIsActive(!isActive);
   };
 
@@ -87,7 +86,7 @@ const Header = () => {
                   offset={50}
                   duration={500}
                 >
-                  Contact
+                  Contact Us
                 </Link>
               </button>
             </ul>
@@ -110,11 +109,48 @@ const Header = () => {
           </div>
         </div>
         <div className={`${isOpen ? "" : "hidden"}`}>
-          <ul className="text-white bg-yellow-600 absolute  w-[100%] py-3  rounded-md mt-7 flex flex-col items-center justify-center gap-5">
-            <li className="cursor-pointer">Home</li>
-            <li className="cursor-pointer">About Us</li>
-            <li className="cursor-pointer">Features</li>
-            <button className="py-3 px-6 rounded-[16px] bg-gradient-to-r from-[#8C5300] via-[#EDB96E] to-[#B7700A]">Contact</button>
+          <ul className="text-black bg-white absolute  w-[100%] py-3  rounded-md flex flex-col items-center justify-center gap-5">
+          <Link
+                to="hero"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                className="cursor-pointer btn"
+              >
+                Home
+              </Link>
+              <Link
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                className="cursor-pointer btn"
+              >
+                About Us
+              </Link>
+              <Link
+                to="features"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                className="cursor-pointer btn"
+              >
+                Features
+              </Link>
+              <button className="py-2 px-6 rounded-[16px] bg-gradient-to-r from-[#8C5300] via-[#EDB96E] to-[#B7700A]">
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Contact Us
+                </Link>
+              </button>
           </ul>
         </div>
       </div>

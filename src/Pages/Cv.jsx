@@ -5,7 +5,6 @@ import Header from '../Layout/Header'
 const Cv = () => {
   return (
     <div>
-        <Header />
         <CreateSucessFullCvs />
     </div>
   )
