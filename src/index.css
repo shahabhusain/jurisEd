@@ -7,7 +7,7 @@ body{
   font-family: "poppins", sans-serif;
 }
 
-button{
+.but{
   border-radius: 16px;
 background: linear-gradient(91deg, #8C5300 0.44%, #EDB96E 171.64%, #B7700A 264.1%);
 }
@@ -51,4 +51,13 @@ textarea{
 
 .btn:hover::after{
   width: 100%;
+}
+
+.bg1{
+  background-image: url(../src/assets/bg-1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
 }

@@ -1,15 +1,13 @@
 import React from "react";
-import logo from "../assets/logo.svg";
-import btn1 from "../assets/btn1.svg";
-import btn2 from "../assets/btn2.svg";
-import hero from "../assets/hero.png";
+import logo from "../../assets/logo.svg";
+import btn1 from "../../assets/btn1.svg";
+import btn2 from "../../assets/btn2.svg";
+import hero from "../../assets/hero.png";
 const Hero = () => {
   return (
-    <div
-      id="hero"
-      className=" flex flex-col md:flex-row items-center justify-between md:mx-44 mx-4 md:mt-24 mt-12"
-    >
-      <div className=" flex flex-col gap-4 md:w-[50%]">
+    <div className="">
+      <div id="hero" className=" flex flex-col md:flex-row gap-12 items-center justify-between md:mx-20 mx-4 md:mt-20 mt-16 " >
+      <div className=" flex flex-col gap-4 md:w-[50%] md:ml-6">
         <img
           className=" md:w-[255px] sm:w-[200px] w-[180px]"
           src={logo}
@@ -33,6 +31,7 @@ const Hero = () => {
         </div>
       </div>
       <img className=" md:w-[50%] md:mt-0 mt-5" src={hero} alt="" />
+    </div>
     </div>
   );
 };

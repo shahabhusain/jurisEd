@@ -9,7 +9,7 @@ const Contact = () => {
         <input className=' py-5 px-3' type="text" placeholder='Grand|' />
         <input className=' py-5 px-3' type="text" placeholder='Enter E-Mail Address ' />
         <textarea className='py-5 px-3' name="" placeholder='Type Your Massage Hear' rows="7"></textarea>
-        <button className=' py-3 px-4 text-white text-[16px] font-bold'>Send</button>
+        <button className=' py-3 px-4 text-white text-[16px] font-bold rounded-[16px] bg-gradient-to-r from-[#8C5300] via-[#EDB96E] to-[#B7700A]'>Send</button>
       </div>
     </div>
   )
