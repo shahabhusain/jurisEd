@@ -13,9 +13,7 @@ const Hero = () => {
           Mobile App
         </h1>
         <p className=" md:text-[16px] text-[13px] text-[#DDD] font-[400] max-w-[525px]">
-          Welcome to Juris Ad – your ultimate destination designed exclusively
-          for legal professionals aiming to refine their skills and enrich their
-          legal lexicon.
+        Welcome to JurisEd – your ultimate destination designed exclusively for law students aiming to refine their skills and enrich their legal acumen.
         </p>
         <div className=" flex items-center gap-4">
           <a href="/">
