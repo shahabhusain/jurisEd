@@ -2,157 +2,102 @@ import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.svg";
 import { IoMdMenu } from "react-icons/io";
 import { FaTimes } from "react-icons/fa";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import DropDownBtn from "./DropDownBtn";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import Homebtn from "./Homebtn";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     const scrollHandler = () => {
-      window.scrollY > 50 ? setIsActive(true) : setIsActive(false);
+      setIsActive(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", scrollHandler);
-
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-    };
+    return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
-  const toggleMenu = () => {
-    setIsActive(!isActive);
+  const handleNavigate = () => {
+    navigate("/");
   };
 
-  const handleNavigate = () => {
-    navigate("/")
-  }
+  const handleHomeClick = () => {
+    if (location.pathname === "/") {
+      // If already on homepage, scroll to hero section
+      document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate to homepage
+      navigate("/");
+    }
+  };
 
   return (
     <>
-      <div
-        className={` sticky top-0 z-[1000] ${
-          isActive
-            ? "bg-white py-1 transition-all duration-300 ease-in-out"
-            : ""
-        }`}
-      >
-        <div className="md:flex hidden items-center justify-between mx-16 py-4 ">
-          <img onClick={handleNavigate} className="w-[100px] cursor-pointer" src={logo} alt="" />
+      <div className={`sticky top-0 z-[1000] ${isActive ? "bg-white py-1 transition-all duration-300 ease-in-out" : ""}`}>
+        <div className="md:flex hidden items-center justify-between mx-16 py-4">
+          <img onClick={handleNavigate} className="w-[100px] cursor-pointer" src={logo} alt="logo" />
           <div>
-            <ul
-              className={`flex items-center gap-8 ${
-                isActive ? "" : "text-white"
-              }`}
-            >
-              <Link
-                to="hero"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="cursor-pointer btn"
-              >
+            <ul className={`flex items-center gap-8 ${isActive ? "" : "text-white"}`}>
+              {/* Desktop: Handle navigation or scroll */}
+              <button onClick={handleHomeClick} className="cursor-pointer btn md:block hidden">
                 Home
-              </Link>
-              <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="cursor-pointer btn"
-              >
+              </button>
+              {/* Mobile: Navigate Home */}
+              <div className="md:hidden block">
+                <Homebtn />
+              </div>
+              <ScrollLink to="about" spy={true} smooth={true} offset={50} duration={500} className="cursor-pointer btn">
                 About Us
-              </Link>
-              <Link
-                to="features"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="cursor-pointer btn"
-              >
+              </ScrollLink>
+              <ScrollLink to="features" spy={true} smooth={true} offset={50} duration={500} className="cursor-pointer btn">
                 Features
-              </Link>
-                <DropDownBtn />
+              </ScrollLink>
+              <DropDownBtn />
               <button className="py-2 px-6 rounded-[16px] bg-gradient-to-r from-[#8C5300] via-[#EDB96E] to-[#B7700A]">
-                <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
+                <ScrollLink to="contact" spy={true} smooth={true} offset={50} duration={500}>
                   Contact Us
-                </Link>
+                </ScrollLink>
               </button>
             </ul>
           </div>
         </div>
       </div>
 
-      <div className={`md:hidden block  my-4 sticky top-0 z-50 ${isActive ? "bg-white py-3 transition-all duration-300 ease-in-out" : ""}`}>
+      {/* Mobile Menu */}
+      <div className={`md:hidden block my-4 sticky top-0 z-50 ${isActive ? "bg-white py-3 transition-all duration-300 ease-in-out" : ""}`}>
         <div className="flex items-center justify-between mx-4">
-          <img onClick={handleNavigate} className="w-[100px] cursor-pointer" src={logo} alt="" />
-          <div className=" flex items-center gap-4">
-          <DropDownBtn isActive={isActive} />
-          <span
-            onClick={() => setIsOpen(!isOpen)}
-            className={` text-[22px] ${isActive ? "" : "text-white"}`}
-          >
-            {isOpen ? <FaTimes /> : <IoMdMenu />}
-          </span>
-          
+          <img onClick={handleNavigate} className="w-[100px] cursor-pointer" src={logo} alt="logo" />
+          <div className="flex items-center gap-4">
+            <DropDownBtn isActive={isActive} />
+            <span onClick={() => setIsOpen(!isOpen)} className={`text-[22px] ${isActive ? "" : "text-white"}`}>
+              {isOpen ? <FaTimes /> : <IoMdMenu />}
+            </span>
           </div>
         </div>
-        <div className={`${isOpen ? "" : "hidden"}`}>
-          <ul className="text-black bg-white absolute  w-[100%] py-3  rounded-md flex flex-col items-center justify-center gap-5">
-          <Link
-                to="hero"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="cursor-pointer btn"
-              >
-                Home
-              </Link>
-              <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="cursor-pointer btn"
-              >
-                About Us
-              </Link>
-              <Link
-                to="features"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="cursor-pointer btn"
-              >
-                Features
-              </Link>
-              <button className="py-2 px-6 rounded-[16px] bg-gradient-to-r from-[#8C5300] via-[#EDB96E] to-[#B7700A]">
-                <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Contact Us
-                </Link>
-              </button>
+        {isOpen && (
+          <ul className="text-black bg-white absolute w-[100%] py-3 rounded-md flex flex-col items-center justify-center gap-5">
+            {/* Mobile: Navigate Home */}
+            <button onClick={handleHomeClick} className="cursor-pointer btn">
+              Home
+            </button>
+            <ScrollLink to="about" spy={true} smooth={true} offset={50} duration={500} className="cursor-pointer btn">
+              About Us
+            </ScrollLink>
+            <ScrollLink to="features" spy={true} smooth={true} offset={50} duration={500} className="cursor-pointer btn">
+              Features
+            </ScrollLink>
+            <button className="py-2 px-6 rounded-[16px] bg-gradient-to-r from-[#8C5300] via-[#EDB96E] to-[#B7700A]">
+              <ScrollLink to="contact" spy={true} smooth={true} offset={50} duration={500}>
+                Contact Us
+              </ScrollLink>
+            </button>
           </ul>
-        </div>
+        )}
       </div>
     </>
   );
