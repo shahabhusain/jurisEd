@@ -16,7 +16,7 @@ function Coursera() {
   };
 
   return (
-    <div className=" mx-2 my-12">
+    <div className=" my-12">
       <div className=" relative">
         <img className=" w-[100%]" src={Image} alt="" />
         <div className=" absolute flex justify-center items-center flex-col  inset-0 ">
@@ -25,8 +25,8 @@ function Coursera() {
         </div>
       </div>
       <div className=" max-w-[1100px] mx-auto">
-        <h1 className="text-white text-2xl font-bold mt-10">
-          INTRODUCTION TO CURRICULUMVITAE(CV)
+        <h1 className="text-white text-2xl uppercase font-bold mt-10">
+        Guide to Avail Coursera Financial Aid
         </h1>
         <p className="text-base text-[#8C8C8C] mt-10">
           Coursera is an online learning platform that offers a wide range of
@@ -48,12 +48,12 @@ function Coursera() {
           Before staring, choose the course that you want to pursue in order to
           move forward with your financial aid application.
         </p>
-        <div className="flex items-center mt-7 mb-3">
+        {/* <div className="flex items-center mt-7 mb-3">
           <p className="text-xs text-[#B7700A] mr-2">Click here</p>
           <img src={VisitIcon} alt="" />
-        </div>
+        </div> */}
 
-        <h1 className="text-white text-[32px] font-semibold text-center mb-6">
+        <h1 className="text-white text-[32px] font-semibold text-center my-6">
           Let’s Get Started!
         </h1>
         <p className="text-xl text-center text-white mb-4">

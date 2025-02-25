@@ -1,7 +1,6 @@
 import React from 'react'
-import { FaFacebook } from "react-icons/fa6";
+import { FaFacebook, FaLinkedin } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
-import { FaYoutube } from "react-icons/fa6";
 import logo from '../assets/logo.svg'
 import { Link } from 'react-scroll';
 const Footer = () => {
@@ -34,7 +33,7 @@ const Footer = () => {
         <div className=' flex md:mt-0 mt-4 items-center gap-4'>
             <span className=' text-white text-[22px] cursor-pointer'><FaFacebook /></span>
             <span className=' text-white text-[22px] cursor-pointer'><FaSquareInstagram /></span>
-            <span className=' text-white text-[22px] cursor-pointer'><FaYoutube /></span>
+            <span className=' text-white text-[22px] cursor-pointer'><FaLinkedin /></span>
         </div>
     </div>
     <div className=' h-[2px] w-[90%] mx-auto bg-[#3A3A3A] mt-12'></div>

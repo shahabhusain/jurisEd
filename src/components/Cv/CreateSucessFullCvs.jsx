@@ -17,7 +17,7 @@ function CreateSucessFullCvs() {
       </div>
       <div className=" md:max-w-[1150px] mx-2 md:mx-auto">
         <h1 className="text-white md:text-2xl text-[1.2rem] font-bold mt-10">
-          INTRODUCTION TO CURRICULUMVITAE (CV)
+        INTRODUCTION TO CURRICULUM VITAE (CV)
         </h1>
         <p className="text-base text-[#8C8C8C] mt-10">
           {firstSection.firstParagraph}
